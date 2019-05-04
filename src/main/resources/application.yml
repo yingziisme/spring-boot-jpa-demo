@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-boot-jpa-demo
+  datasource:
+    url: jdbc:mysql://localhost:3306/demodb?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 100
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: SpringDataJpaPool
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        format-sql: true
+server:
+  port: 10001
